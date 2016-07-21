@@ -7,6 +7,7 @@
 int ledPin = 13;  // use the built in LED on pin 13 of the Uno
 int state = 0;
 int flag = 0;        // make sure that you return the state only once
+//String readString;  To read string
 
 void setup() {
     // sets the pins as outputs:
@@ -18,6 +19,16 @@ void setup() {
 
 void loop() {
     //if some data is sent, read it and save it in the state variable
+
+    //Algoritm  to read string 
+    /* 
+      while (Serial.available()) {
+        delay(3);  
+        char c = Serial.read();
+        readString += c; 
+      }
+    */
+
     if(Serial.available() > 0){
       state = Serial.read();
       flag=0;
